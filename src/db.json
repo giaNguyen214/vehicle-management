@@ -1,5 +1,5 @@
 {
-  "user": [
+  "login": [
     {
       "id": "1",
       "username": "Gia Nguyen",
@@ -15,5 +15,17 @@
       "username": "Luan",
       "password": "1412"
     }
+  ],
+
+  "driver": [
+
+  ],
+
+  "vehicle": [
+
+  ],
+
+  "trip": [
+    
   ]
 }

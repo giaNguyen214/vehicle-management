@@ -14,7 +14,7 @@ import { useEffect } from 'react';
 
 function Login() {
     return ( 
-        <div>
+        <div >
             <h1 style={{marginTop: '100px', fontWeight: 'bold'}}>LOGIN</h1>
 
             <form id="box">

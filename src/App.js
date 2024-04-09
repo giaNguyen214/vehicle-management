@@ -9,7 +9,7 @@ import { Fragment } from 'react';
 function App() {
 
   return (
-      <div className="App">
+      <div className="App" >
         <Routes>
           {publicRoutes.map((route, index) => {
             let Layout = DefaultLayout
