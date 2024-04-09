@@ -5,9 +5,9 @@ import './styles.css'
 
 function DefaultLayout({children}) {
     return ( 
-        <div>
+        <div >
             <Navigation />
-            <div id="container">
+            <div id="container" >
                 <div id="content">
                     {children}
                 </div>
