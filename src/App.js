@@ -1,29 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { publicRoutes } from './routes';
-import { privateRoutes } from './routes';
-import DefaultLayout from './Layout/DefaultLayout'
-import { Fragment } from 'react';
 
 function App() {
-
   return (
-      <div className="App" >
-        <Routes>
-          {publicRoutes.map((route, index) => {
-            let Layout = DefaultLayout
+    <div className="App">
+      <nav>
+        <ul>
+          <li>
+            <a href='/'>Home page</a>
+          </li>
 
-            const Page = route.component;
-            return <Route key={index} path={route.path} element=
-              {<Layout>
-                <Page />
-              </Layout>
-              } />;
-          })}
+          <li>
+            <a href='/Vehicle'>vehicle</a>
+          </li>
 
-        </Routes>
-      </div>
+          <li>
+            <a href='/Login'>Login</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   );
 }
 
