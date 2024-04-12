@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import './styles.css'
 import driverApi from '../../api/driverApi';
-import images from '../../assets/images';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faPenToSquare  } from '@fortawesome/free-solid-svg-icons'
 
 
 function Driver() {
     const initialFormData = {
-        id: '',
         fullname: '',
         email: '',
         date_of_birth: '',
@@ -45,8 +45,8 @@ function Driver() {
     // }
 
     async function handleAdd() {
-        const ID =  await driverApi.getNewID();
-        formData.id = ID + 1; 
+        // const ID =  await driverApi.getNewID();
+        // formData.id = ID + 1; 
         
         await driverApi.add(formData);
         setAdding(true);
@@ -69,7 +69,7 @@ function Driver() {
 
     const [errors, setErrors] = useState({})
 
-    // modal
+    // 
     async function handleEdit(id) {
         const temp = await driverApi.get(id);
         setUpdate(temp);
@@ -94,7 +94,11 @@ function Driver() {
             console.error('Error updating driver:', error);
         }
     }
-    //end modal
+    
+    async function handleDelete(id) {
+        await driverApi.remove(id);
+        setAdding(true);
+    }
 
     return ( 
         <div className='container'>
@@ -199,9 +203,9 @@ function Driver() {
                                     <td>{driver.phone_number}</td>
                                     <td>{driver.expire_license}</td>
                                     <td>{driver.experience}</td>
-                                    <td> 
-                                        <button onClick={() => handleEdit(driver.id)}> Edit </button>
-                                        <input type='checkbox'/> 
+                                    <td style={{display:'flex', justifyContent:"space-around"}}> 
+                                        <button onClick={() => handleEdit(driver.id)}> <FontAwesomeIcon icon={faPenToSquare} /> </button>
+                                        <button onClick={() => handleDelete(driver.id)}> <FontAwesomeIcon icon={faTrash} /> </button>
                                     </td>
                                 </tr>
                             )
