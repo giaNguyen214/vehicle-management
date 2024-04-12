@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './styles.css'
 import driverApi from '../../api/driverApi';
 import images from '../../assets/images';
-import ModalUpdate from './modalUpdate';
+
 
 function Driver() {
     const initialFormData = {
@@ -153,6 +153,7 @@ function Driver() {
                     <span className='addSpan'> Add </span>
                 </button>
             </div>
+
 
             <div className='read'>
                 <table className='list'>
