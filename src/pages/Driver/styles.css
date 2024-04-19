@@ -1,101 +1,113 @@
-.container {
-    margin-top: 100px;
+.driver_container {
+    padding-top: 7vh;
+    padding-bottom: 3vh;
+    /* min-height: 93vh; */
+    /* width: 100%; */
+    /* background-color: #198DB2; */
+
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .add, .read {
     margin: auto;
     width: 90%;
-    border: 2px solid black;
     margin-bottom: 70px;
 }
 
 .add {
     min-height: 300px;
-    background-color: #caf0f8;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    background-color: rgb(231,183,95);
+    border: 3px solid black;
     /* align-items: center; */
-    
-}
 
-.read {
-    height: auto;
-    background-color: #074173;
-    color: white;
-    max-height: 570px;
-    overflow: auto;
+    /* display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; */
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .addBox {
+    position: relative;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .addInputText {
-    width: 250px;
+    width: 100%;
     height: 50px;
 }
 
 .addButton {
-    width: 530px;
+    width: 100%;
     height: 76px;
     margin: auto;
-    background-color: #bde0fe;
+    background-color: white;
     font-weight: bold;
+    grid-column: 4 / span 2;
 }
 
 .addButton:hover {
-    background-color: #006d77;
-    color: wheat;
+    background-color: black;
+    color: white;
 }
 
 .addSpan {
-    background-image: url("../../assets/images/plus.png");
-    /* background-image: url("../../assets/images/ballpoint_pen.png"); */
-    background-repeat: no-repeat;
-    background-size: contain; /* điều chỉnh kích thước hình ảnh */
-    padding-left: 20px; /* thêm khoảng cách giữa hình ảnh và văn bản */   
-    font-size: large; 
-}
-
-.addBox {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
-.list {
-    width: 100%;
+.message {
+    position: absolute;
+    top: 100%;
+    left: 0; /* Đặt lỗi bắt đầu từ phía trái */
+    color: red; /* Đặt màu chữ là màu đỏ */
+    font-size: small; /* Đặt kích thước chữ nhỏ hơn */
+    font-style: italic;
 }
 
-.list th, td {
-    border: 1px solid white;
-}
 
-.deleteButton {
-    position: fixed;
-    top: 473px;
-    right: 5px;
-}
 
-@media (min-width: 768px) {
-    .addBox {
-        flex: 0 0 23%; /* Chia phần addBox thành 4 cột */
-    }
-}
-
-@media (min-width: 992px) {
-    .addBox {
-        flex: 0 0 15%; /* Chia phần addBox thành 6 cột */
-    }
-}
-
-.headerTable {
-    width: 100%;
-    position: sticky;
-    top: 0;
-    background-color: #7BC9FF;
+.read{
+    height: auto;
+    background-color: rgb(251,238,202);
     color: black;
+    max-height: 550px;
+    overflow: auto;
+}
+
+.list{
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0px;    
+}
+
+.list th{
+    position: sticky; 
+    top: 0px;
+    
+    background-color: #B80000;
+    color: white;
+    
+    text-align: center;
+    outline: 0.7px solid black;
+    border: 1.5px solid black;
+
+} 
+
+.list td {
+    border: 1.5px solid black;
 }
 
 .updateInput {
@@ -104,5 +116,83 @@
 }
 
 .updateInput:focus {
-    background-color: rgb(126, 209, 207)
+    background-color: rgb(102, 116, 109);
+    color: white;
+}
+
+.errorInput {
+    background-color: rgb(250, 180, 169);
+}
+
+.addBox_label {
+    font-weight: 555;;
+}
+
+@media (max-width: 480px) {
+    .read th {
+         font-size: small;
+    }
+}
+/* 
+@media (max-width: 768px) {
+    .addInputText {
+        width: 500px;
+    }
+} */
+
+/* Thêm đoạn mã CSS responsive cho .add và .message */
+@media (max-width: 1060px) {
+    .add {
+        grid-template-columns: auto auto auto auto;
+    }
+    
+    .addButton {
+        grid-column: 2 / span 2;
+    }
+}
+
+@media (max-width: 800px) {
+    .add {
+        grid-template-columns: auto auto auto;
+    }
+
+    .addButton {
+        grid-column: initial;
+    }
+}
+
+@media (max-width: 620px) {
+    .add {
+        grid-template-columns: auto auto;
+    }
+
+    .addButton {
+        grid-column: 1 / span 2;
+    }
+
+    .addBox {
+        margin-bottom: 15px;
+    }
+
+    .addBox_label {
+        font-size: small;
+    }
+
+    .message {
+        font-size: x-small;
+    }
+
+    .addButton {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    .addBox {
+        width: 80%;
+    }
+
+    .addButton {
+        width: 90%;
+    }
 }

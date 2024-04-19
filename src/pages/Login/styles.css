@@ -1,19 +1,17 @@
-.header {
-    margin-top: 100px;
-    font-weight: bold;
-}
 
 .formSubmit {
-    width: 30%;
+    margin-right: 50px;
+
+    width: 27%;
     height: 500px;
-    background-color: #197bbd;
+    background-color: rgb(143, 143, 59);
     border: 5px solid black;
+
     display: flex;
     align-items: space-around;
     justify-content: space-between;
     flex-direction: column;
-    margin: auto;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 .box {
     width: 100%;
@@ -40,9 +38,10 @@
 }
 
 .formButton {
+    position: relative;
     color: black;
     font-weight: bold;
-    background-color: #90e0ef;
+    background-color: burlywood;
     width: 90%;
     padding: 20px;
     font-size: 20px;
@@ -55,6 +54,59 @@
 }
 
 .error {
-    background-color: #ffe5ec;
-    color: red;
+    background-color: rgb(150, 178, 242);
+    color: black;
+    font-weight: bold;
+}
+
+.login_container {
+    height: 100%;
+    background-image: url('../../assets/images/background.png'); /* Đường dẫn đến hình ảnh */
+    background-size: cover; /* Đảm bảo hình ảnh sẽ bao phủ toàn bộ phần tử */
+    /*background-position: center; /* Căn giữa hình ảnh trong phần tử */
+    background-repeat: no-repeat; /* Không lặp lại hình ảnh */
+    background-attachment: fixed;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    min-height: 93vh;
+}
+
+@media (max-width: 1200px) {
+    .login_container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formSubmit {
+        background-color: rgba(143, 143, 59, 0.8);
+        width: 50%;
+        margin-top: 20px;
+        margin-right: 0px;
+    }
+
+    .box, .error, .formButton {
+        font-size: small;
+    }
+
+    .formButton {
+        background-color: rgba(222, 184, 135, 0.8);
+    }
+    
+    .formButton:hover {
+        background-color: #204b57;
+    }
+    
+    .error {
+        background-color: rgba(150, 178, 242, 0.512);
+    }
+}
+
+@media (max-width: 480px) {
+    .formSubmit {
+        width: 70%;
+        margin-top: 0px;
+    }
 }
